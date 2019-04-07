@@ -39,6 +39,15 @@ a:hover, a:focus {
 	text-decoration: none;
 	color: #222;
 }
+
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -75px; 
+  height: 75px; 
+  visibility: hidden; 
+}
+
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -448,6 +457,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	color: #666;
 }
 /* Footer */
+/*
 #footer {
 	background-color: #222222;
 	color: #777;
@@ -490,7 +500,7 @@ label {
 }
 }
 
-
+*/
 
 
 /* Style the tab */
