@@ -130,7 +130,7 @@ hr {
 */
 /* Home Style */
 header {
-	background: url("image.jpg") no-repeat bottom right;
+	background: url("image/image.jpg") no-repeat bottom right;
 	background-size: cover;
 	color: #cfcfcf;
 	position: relative;
@@ -178,7 +178,7 @@ header p {
 	font-weight: 700;
 }
 .space {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 #services-section i.fa {
 	font-size: 40px;
