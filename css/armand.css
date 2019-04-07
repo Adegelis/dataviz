@@ -39,6 +39,15 @@ a:hover, a:focus {
 	text-decoration: none;
 	color: #222;
 }
+
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -75px; 
+  height: 75px; 
+  visibility: hidden; 
+}
+
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -121,7 +130,7 @@ hr {
 */
 /* Home Style */
 header {
-	background: url("image.jpg") no-repeat bottom right;
+	background: url("../images/image.jpg") no-repeat bottom right;
 	background-size: cover;
 	color: #cfcfcf;
 	position: relative;
@@ -169,7 +178,7 @@ header p {
 	font-weight: 700;
 }
 .space {
-	margin-top: 40px;
+	margin-top: 20px;
 }
 #services-section i.fa {
 	font-size: 40px;
@@ -448,6 +457,7 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	color: #666;
 }
 /* Footer */
+/*
 #footer {
 	background-color: #222222;
 	color: #777;
@@ -490,7 +500,7 @@ label {
 }
 }
 
-
+*/
 
 
 /* Style the tab */
