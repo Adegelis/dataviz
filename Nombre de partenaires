@@ -1,58 +1,124 @@
+FEMMES
+
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 Highcharts.chart('container', {
+
     chart: {
-        type: 'column'
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
     },
     title: {
-        text: 'Nombre de partenaires'
-    },
-    subtitle: {
-        text: ''
-    },
-    xAxis: {
-        categories: [
-            '1',
-            'Entre 2 et 4',
-            'Entre 5 et 9',
-            'Plus de 10',
-            
-        ],
-        crosshair: true
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: ''
-        }
+        text: 'Femmes',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 40
     },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:f} </b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
+        pointFormat: '{series.name} : <b>{point.y:f}</b>'
     },
     plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+                
+            },  colors: [
+     '#74c476', 
+     '#fb6a4a', 
+     '#E7CE17', 
+     '#264874  ', 
+
+   ],
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
         }
     },
     series: [{
-        name: 'Hommes',
-        data: [324, 842, 648, 1033], color:'#2eaaff'
+        type: 'pie',
+        name: 'Nombre de femmes',
+        innerSize: '50%',
+        data: [
+            ['1', 1028],
+            ['Entre 2 et 4', 1874],
+            ['Entre 5 et 9', 986],
+            ['Plus de 10', 707]
+         
+        ]
+    }] 
+}) ; 
 
-    }, {
-        name: 'Femmes',
-        data: [1028, 1874, 986, 707]: color:'#f748ea'
 
+HOMMES
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+Highcharts.chart('container', {
+
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
     },
+    title: {
+        text: 'Hommes',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 40
+    },
+    tooltip: {
+        pointFormat: '{series.name} : <b>{point.y:f}</b>'
+    },
+    plotOptions: {
+    
+        pie: {
+            dataLabels: {
+                enabled: true,
+                distance: -50,
+                style: {
+                    fontWeight: 'bold',
+                    color: 'white'
+                }
+                
+            }, colors: [
+     '#74c476', 
+     '#fb6a4a', 
+     '#E7CE17', 
+     '#264874  ', 
 
-    ]
-});
+   ],
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '75%'],
+            size: '110%'
+        }
+    },
+    series: [{
+        type: 'pie',
+        name: 'Nombre d\'hommes',
+        innerSize: '50%',
+        data: [
+            ['1', 324],
+            ['Entre 2 et 4', 842],
+            ['Entre 5 et 9', 648],
+            ['Plus de 10', 1033]
+         
+        ]
+    }] 
+}) ; 
