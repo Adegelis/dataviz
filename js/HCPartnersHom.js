@@ -33,13 +33,13 @@ Highcharts.chart('partnershom', {
     },
     series: [{
         type: 'pie',
-        name: 'Nombre d\'hommes',
+        name: 'Pourcentage',
         innerSize: '50%',
         data: [
-            ['1', 324],
-            ['Entre 2 et 4', 842],
-            ['Entre 5 et 9', 648],
-            ['Plus de 10', 1033]
+            ['1', 11],
+            ['Entre 2 et 4', 30],
+            ['Entre 5 et 9', 23],
+            ['Plus de 10', 36]
          
         ]
     }]

@@ -33,13 +33,13 @@ Highcharts.chart('partnersfem', {
     },
     series: [{
         type: 'pie',
-        name: 'Nombre de femmes',
+        name: 'Pourcentage',
         innerSize: '50%',
         data: [
-            ['1', 1028],
-            ['Entre 2 et 4', 1874],
-            ['Entre 5 et 9', 986],
-            ['Plus de 10', 707]
+            ['1', 22],
+            ['Entre 2 et 4', 41],
+            ['Entre 5 et 9', 22],
+            ['Plus de 10', 15]
          
         ]
     }] 
