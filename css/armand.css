@@ -113,6 +113,62 @@ hr {
     height: 400px;
     margin: 0 auto
 }
+
+#hccuisine {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcvaisselle {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcmenage {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hclinge {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcgestion {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hccourses {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcenfants {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcensemble {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
 /*
 #menu.navbar-default {
 	background-color: rgba(248, 248, 248, 0);
