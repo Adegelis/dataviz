@@ -85,6 +85,34 @@ hr {
 #menu {
 	transition: all 0.8s;
 }
+
+#firstsex {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#partnersfem {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#partnershom {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#parite {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
 /*
 #menu.navbar-default {
 	background-color: rgba(248, 248, 248, 0);

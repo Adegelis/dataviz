@@ -14,7 +14,17 @@
   <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/armand.css">
 
-  <script type="text/javascript" src="modernizr.custom.js"></script>
+  <!-- Javascript -->
+  <script src="modernizr.custom.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  
+
+
+
 
   
 </head>
@@ -65,17 +75,21 @@
 <div id="Naissance-section" class="text-center">
   <div class="container">
     <div class="clearfix"></div>
-      <div class="row">
-        <div class="col-md-6">
-          <h5> Sophie naît en 1974. Sa mère, Charlotte, a alors 21 ans. La France sort des Trente Glorieuses, et pourtant l’avortement n’est toujours pas légal : il le sera en 1975 grâce à la loi Veil. 
-          </h5>
+    <div class="row">
+      <div class="col-md-6">
+        <h5> Sophie naît en 1974. Sa mère, Charlotte, a alors 21 ans. La France sort des Trente Glorieuses, et pourtant l’avortement n’est toujours pas légal : il le sera en 1975 grâce à la loi Veil. 
+        </h5>
 
-          <h6> 1974 marque aussi la première accession d’une femme à un poste de secrétaire d’Etat : Françoise Giroud est nommée secrétaire d’Etat à la condition féminine. 45 ans plus tard, la parité dans le monde politique est toujours loin d’être atteinte. FIGURE. En 2014, seulement 16% des maires élu.e.s de leur commune sont des femmes. La progression a été plus forte pour la part des femmes élues au Sénat, notamment grâce à la Loi sur la Parité de 2001 qui a soumis les élections sénatoriales au principe de parité dans les départements qui élisent au moins quatre sénateurs, soit dans la moitié des départements.
-          </h6>
+        <h6> 1974 marque aussi la première accession d’une femme à un poste de secrétaire d’Etat : Françoise Giroud est nommée secrétaire d’Etat à la condition féminine. 45 ans plus tard, la parité dans le monde politique est toujours loin d’être atteinte. FIGURE. En 2014, seulement 16% des maires élu.e.s de leur commune sont des femmes. La progression a été plus forte pour la part des femmes élues au Sénat, notamment grâce à la Loi sur la Parité de 2001 qui a soumis les élections sénatoriales au principe de parité dans les départements qui élisent au moins quatre sénateurs, soit dans la moitié des départements.
+        </h6>
+      </div>
+      <div class="col-md-6">
+        <div id="parite"></div>
+        <div class="container">
+            <script src="js/HCParite.js"></script>
         </div>
-        <div class="col-md-6">
-          <img src="images/parite.jpg" class="img-fluid" alt="Responsive image">
-        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -103,8 +117,30 @@
   <div class="container">
     <h5>La naissance de Sophie se passe bien. Elle est un sacré beau bébé, pas comme Annette qui était toute vilaine.
     </h5>
-    <img src="images/nbre_partners.png" class="img-fluid" alt="Responsive image">
-    <img src="images/age_first_sex.png" class="img-fluid" alt="Responsive image">
+  </div>
+
+  <div class="container">
+    <div id="firstsex"></div>
+    <script src="js/HCFirstSex.js"></script>
+  </div>
+</div>
+
+<div class="text-center">
+  <div class="contenair">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="contenair">
+          <div id="partnersfem"></div>
+          <script src="js/HCPartnersFem.js"></script>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="contenair">
+          <div id="partnershom"></div>
+          <script src="js/HCPartnersHom.js"></script>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -112,8 +148,825 @@
 
 <div id="Adulte-section" class="text-center">
   <div class="container">
-    <h5>La naissance de Sophie se passe bien. Elle est un sacré beau bébé, pas comme Annette qui était toute vilaine.
+    <h5>Quelle est la répartition des tâches quotidiennes au sein du foyer de Sophie? Clique sur les boutons pour le découvrir ;)
     </h5>
+  </div>
+</div>
+
+<script src="js/OpenCity.js"></script>
+
+<div class="tab">
+  <div class="row">
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Cuisine')">Cuisine</button>
+    </div>
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Vaisselle')">Vaisselle</button>
+    </div>
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Menage')">Ménage</button>
+    </div>
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Linge')">Linge</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Gestion')">Administratif</button>
+    </div>
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Courses')">Courses</button>
+    </div>
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Enfants')">Enfants</button>
+    </div>
+    <div class="col-md-3">
+      <button class="tablinks" onclick="openCity(event, 'Ensemble')">Ensemble</button>
+    </div>
+  </div>
+</div>
+
+<div id="Cuisine" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-cuisine" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré à la cuisine'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [18],color:'#2eaaff'}, {name: 'Femmes',data: [52],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-cuisine", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Cuisine.png" alt="Olympics" width="80" height="80">
+      <p>
+        <br>
+      </p>
+      <h3 align="center">La cuisine occupe les femmes 34 minutes de plus chaque jour que les hommes !</h3>
+      <p align="center"> Cela revient à 12410 minutes sur une année... Soit presque <b> 9 jours </b> passés en plus en cuisine que les hommes. ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Vaisselle" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-vaisselle" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré à la vaisselle'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [8],color:'#2eaaff'}, {name: 'Femmes',data: [18],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-vaisselle", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Vaisselle.png" alt="Olympics" width="80" height="80">
+      <p>
+        <br>
+      </p>
+      <h3 align="center">Les femmes passent 10 minutes de plus chaque jour à faire la vaisselle... </h3>
+      <p align="center"> ... En un an, elles passent donc <b> 60 heures </b> en plus que les hommes à faire la vaisselle. ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Menage" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-menage" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré au ménage'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [19],color:'#2eaaff'}, {name: 'Femmes',data: [52],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-menage", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Menage.png" alt="Olympics" width="80" height="80">
+      <p>
+        <br>
+      </p>
+      <h3 align="center"> La différence entre les hommes et les femmes est de 33 minutes</h3>
+      <p align="center"> En un an, elles passent donc <b> 200 heures </b> de plus à faire le ménage que les hommes... Soit <b> 8 jours </b> entiers ! ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Linge" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-linge" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré au linge'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [1],color:'#2eaaff'}, {name: 'Femmes',data: [15],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-linge", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Linge.png" alt="Olympics" width="85" height="85">
+      <p>
+        <br>
+      </p>
+      <h3 align="center">En moyenne, une femme passe 14 minutes en plus chaque jour à s'occuper du linge...</h3>
+      <p align="center"> Sur une année, cela revient à <b> 85 heures </b>, soit <b> 3 jours et demi </b> !  ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Gestion" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-administratif" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré à la gestion du ménage'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [8],color:'#2eaaff'}, {name: 'Femmes',data: [7],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-administratif", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Administratif.png" alt="Olympics" width="80" height="80">
+      <p>
+        <br>
+      </p>
+      <h3 align="center">Les hommes consacrent en moyenne une minute en plus par jour à gérer le ménage et l'administratif que les femmes </h3>
+      <p align="center"> C'est la seule tâche domestique pour laquelle ils consacrent plus de temps. ​<br> 
+        Et cette différence revient à <b> 6 heures </b> sur une année ! ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Courses" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-courses" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré aux courses'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [18],color:'#2eaaff'}, {name: 'Femmes',data: [25],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-courses", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Courses.png" alt="Olympics" width="85" height="85">
+      <p>
+        <br>
+      </p>
+      <h3 align="center"> 7 minutes en plus chaque jour consacrées à faire les courses pour les femmes... </h3>
+      <p align="center"> ... Soit <b> 43 heures </b> passées en plus à faire les courses en un an ! ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Enfants" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-enfants" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré aux enfants'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [12],color:'#2eaaff'}, {name: 'Femmes',data: [28],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-enfants", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+        <br>
+      </p>
+      <img src="images/Enfants.jpg" alt="Olympics" width="110" height="120">
+      <p>
+        <br>
+      </p>
+      <h3 align="center">Les femmes consacrent 16 minutes en plus chaque jour à leurs enfants...</h3>
+      <p align="center"> ... Sur une année cela revient à presque <b> 100 heures </b> en plus ! ​</p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<div id="Ensemble" class="tabcontent">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <div id="highcharts-ensemble" style="min-width: 310px; height: 350px; margin: 0 auto" ></div>
+      <script>
+        (function(){ var files = ["https://code.highcharts.com/stock/highstock.js","https://code.highcharts.com/highcharts-more.js","https://code.highcharts.com/highcharts-3d.js","https://code.highcharts.com/modules/data.js","https://code.highcharts.com/modules/exporting.js","https://code.highcharts.com/modules/funnel.js","https://code.highcharts.com/modules/annotations.js","https://code.highcharts.com/modules/solid-gauge.js"],
+          loaded = 0; 
+          if (typeof window["HighchartsEditor"] === "undefined") 
+            {window.HighchartsEditor = {ondone: [cl],hasWrapped: false,hasLoaded: false};include(files[0]);} 
+          else {if (window.HighchartsEditor.hasLoaded) {cl();} 
+          else {window.HighchartsEditor.ondone.push(cl);}}
+          function isScriptAlreadyIncluded(src){
+            var scripts = document.getElementsByTagName("script");
+            for (var i = 0; i < scripts.length; i++) {
+              if (scripts[i].hasAttribute("src")) {
+                if ((scripts[i].getAttribute("src") || "").indexOf(src) >= 0 || (scripts[i].getAttribute("src") === "http://code.highcharts.com/highcharts.js" && src === "https://code.highcharts.com/stock/highstock.js")) {
+                  return true;
+                }
+              }
+            }
+            return false;
+          }
+          function check() {
+            if (loaded === files.length) {
+              for (var i = 0; i < window.HighchartsEditor.ondone.length; i++) {
+                try {window.HighchartsEditor.ondone[i]();
+                } 
+                catch(e) {console.error(e);}
+              }window.HighchartsEditor.hasLoaded = true;
+            }
+          }
+          function include(script) {
+            function next() {
+              ++loaded;
+              if (loaded < files.length) {
+                include(files[loaded]);
+              }
+              check();
+            }
+            if (isScriptAlreadyIncluded(script)) {
+              return next();
+            }
+            var sc=document.createElement("script");
+            sc.src = script;
+            sc.type="text/javascript";
+            sc.onload=function() { 
+              next(); 
+            };
+            document.head.appendChild(sc);
+          }
+          function each(a, fn){
+            if (typeof a.forEach !== "undefined"){
+              a.forEach(fn);
+            }
+            else{
+              for (var i = 0; i < a.length; i++){
+                if (fn) {fn(a[i]);}
+              }
+            }
+          }
+          var inc = {},incl=[]; 
+          each(document.querySelectorAll("script"), function(t) {inc[t.src.substr(0, t.src.indexOf("?"))] = 1;}); 
+          function cl() {
+            if(typeof window["Highcharts"] !== "undefined"){
+              var options={
+                chart: {type: 'column'},
+                title: {text: 'Temps moyen quotidien consacré aux tâches domestiques'},
+                subtitle: {text: ''},
+                xAxis: {categories: ['Sexe'],crosshair: true},yAxis: {min: 0,title: {text: 'Temps (minutes)'}},
+                tooltip: {
+                  headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                  pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:f} min</b></td></tr>',
+                  footerFormat: '</table>',
+                  shared: true,
+                  useHTML: true
+                },
+                plotOptions: {column: {pointPadding: 0.2,borderWidth: 0}},
+                series: [{name: 'Hommes',data: [135],color:'#2eaaff'}, {name: 'Femmes',data: [223],color:'#f748ea'}]
+            };
+          new Highcharts.Chart("highcharts-ensemble", options);}}})();
+        </script>
+    </div>
+    <div class="col-md-3">
+      <p>
+      </p>
+      <img src="images/Ensemble.jpg" alt="Olympics" width="120" height="120">
+      <p>
+      </p>
+      <h3 align="center">Presque 1h30 de différence chaque jour...</h3>
+      <p align="center"> ... Les femmes consacrent donc <b> 22 jours complets </b> en plus aux tâches domestiques que les hommes sur une année ! <br>
+      Les tâches domestiques représentent donc <b> 15% </b> de leur temps sur une année, alors que pour les hommes cela ne représente que <b> 9% </b>. ​</p>
+    </div>
+    <div class="col-md-3"></div>
   </div>
 </div>
 
