@@ -46,11 +46,11 @@ Highcharts.chart('container', {
     },
     series: [{
         name: 'Hommes',
-        data: [324, 842, 648, 1033]
+        data: [324, 842, 648, 1033], color:'#2eaaff'
 
     }, {
         name: 'Femmes',
-        data: [1028, 1874, 986, 707]
+        data: [1028, 1874, 986, 707]: color:'#f748ea'
 
     },
 
