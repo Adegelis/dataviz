@@ -1,0 +1,136 @@
+
+ATTENTION IL Y A DEUX GRAPHES DANS LE FICHIER
+
+############
+
+VIOLLENCES 1
+
+#############
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Violences phyisques et sexuelles subies par les femmes'
+    },
+    xAxis: {
+        categories: ['2006-2010', '2011-2017']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Part des violences physiques et sexuelles (\%)'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+         name: 'Violences physiques',
+        data: [239400,	204350], color: '#264874' 
+    }, {
+        name: 'Violences sexuelles',
+        data: [58100, 46900], color: '#74c476' 
+    }]
+});    
+
+############
+
+VIOLLENCES 2
+
+#############        
+        
+        
+        
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'area'
+    },
+    title: {
+        text: 'Evolution du nombre de violences subies par les femmes'
+    },
+    subtitle: {
+        text: 'En dehors du ménage et hors vol ou tentative de vol'
+    },
+    xAxis: {
+        categories: ['2007', '2009', '2011', '2013', '2015'],
+        tickmarkPlacement: 'on',
+        title: {
+            enabled: false
+        }
+    },
+    yAxis: {
+        title: {
+            text: ''
+        },
+        labels: {
+            formatter: function () {
+                return this.value / 1000;
+            }
+        }
+    },
+    tooltip: {
+        split: true,
+        valueSuffix: ''
+    },
+    plotOptions: {
+        area: {
+            stacking: 'normal',
+            lineColor: '#666666',
+            lineWidth: 1,
+            marker: {
+                lineWidth: 1,
+                lineColor: '#666666'
+            }
+        }
+    },
+    series: [{
+        name: 'Violences physiques',
+        data: [294700,	375820,	319700,	301860,	379750], color: '#264874'
+    }, {
+        name: 'Menaces',
+        data: [869030,	857500,	805500,	851520,	880880], color:'#fb6a4a'
+    }, {
+        name: 'Violences sexuelles',
+        data: [115500,	115500,	114660,	114660,	114660], color:      '#E7CE17'
+    }, 
+    {
+        name: 'Injures',
+        data: [2860410,	2700540,	2373800,	2630100,	2934400], color: '#74c476'
+    }
+    ]
+});
+
+  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   
+

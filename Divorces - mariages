@@ -1,0 +1,76 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container"></div>
+
+
+
+#container {
+	min-width: 310px;
+	max-width: 800px;
+	height: 400px;
+	margin: 0 auto
+}
+
+
+
+Highcharts.chart('container', {
+
+    title: {
+        text: 'Nombre de mariages et de divorces'
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: ''
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1970
+        }
+    },
+
+    series: [{
+        name: 'Mariages',
+        data: [393686,	406416,	416521,	400740,	394755,	387379,	374003,	368166,	354628,	340405,	334377,	315117,	312405,	300513,	281402,	269419,	265678,	265177,	271124,	279900,	287099,	280175,	271427,	255190,	253746,	254651,	287144,	291163,	278525,	293544,	305234,	295720,	286169,	282756,	278439,	283036,	273914,	273669,	265404,	251478,	251654,	236826,	245930,	231225], color: '#74c476' 
+   
+     
+    }, {
+        name: 'Divorces',
+        data: [38949,	41628,	44738,	47319,	53106,	55612,	60490,	71319,	74416,	78571,	81156,	87615,	93892,	98730,	104012,	107505,	108380,	106527,	106096,	105295,	105813,	108086,	107994,	110759,	115658,	119189,	119699,	118284,	118884,	119549,	116723,	115388,	118686,	127966,	134601,	155253,	139147,	134477,	132594,	130601,	133909,	132977,	128371,	124948], color: '#264874'
+        
+        
+    },], 
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
