@@ -225,6 +225,33 @@ hr {
     margin: 0 auto
 }
 
+#hcdivmar {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcviol1 {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#hcviol2 {
+	min-width: 310px;
+    max-width: 800px;
+    height: 400px;
+    margin: 0 auto
+}
+
+#wordcloud_description_fille {
+	height:100%;
+	width:100%;
+	min-height:150px
+}
+
 /*
 #menu.navbar-default {
 	background-color: rgba(248, 248, 248, 0);

@@ -1,22 +1,4 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-
-<div id="container"></div>
-
-
-
-#container {
-	min-width: 310px;
-	max-width: 800px;
-	height: 400px;
-	margin: 0 auto
-}
-
-
-
-Highcharts.chart('container', {
+Highcharts.chart('hcdivmar', {
 
     title: {
         text: 'Nombre de mariages et de divorces'
@@ -57,20 +39,4 @@ Highcharts.chart('container', {
         
         
     },], 
-
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 500
-            },
-            chartOptions: {
-                legend: {
-                    layout: 'horizontal',
-                    align: 'center',
-                    verticalAlign: 'bottom'
-                }
-            }
-        }]
-    }
-
 });
