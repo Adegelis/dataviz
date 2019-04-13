@@ -6,7 +6,7 @@ Highcharts.chart('hcviol1', {
         text: 'Violences phyisques et sexuelles subies par les femmes'
     },
     subtitle: {
-        text: 'Au sein du ménage'
+        text: 'Au sein du ménage, moyenne annuelle'
     },
     xAxis: {
         categories: ['2006-2010', '2011-2017']
@@ -23,7 +23,7 @@ Highcharts.chart('hcviol1', {
     },
     plotOptions: {
         column: {
-            stacking: 'percent'
+            stacking: 'normal'
         }
     },
     series: [{
