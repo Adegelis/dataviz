@@ -1,0 +1,135 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}  
+\usepackage{eurosym}
+\usepackage{fontawesome}
+\usepackage[scale=0.82]{geometry}
+\setlength{\makecvtitlenamewidth}{3cm}
+
+\setlength{\headsep}{0.01pt}
+\setlength{\textheight}{1000pt} 
+
+
+\name{François}{Devrainne}
+\address{33 rue du faubourg du temple}{75010 Paris}{France} \\
+\extrainfo{
+ \href{https://www.linkedin.com/in/francois-devrainne}{\faLinkedin} - \href{https://github.com/SamuelRitchie}{\faGithub}
+}
+\phone[mobile]{+33626961064} 
+\email{francois.devrainne@gmail.com} 
+
+
+\begin{document}
+
+
+\makecvtitle
+
+\vspace{-10pt}
+
+\section{Education}
+\cventry{2014--2019}{MSc Statistics (Data Science Major) - French Engineering Degree}{ENSAE ParisTech}{Paris}{\textit{}}{French leading school in Statistics, Data Science, Applied Economics and Finance \newline \textit{\textbf{Relevant courses}}: Advanced Statistics, Machine Learning, Deep Learning, Network Analysis, Optimization, Monte Carlo, Advanced Econometrics, Temporal Series}  
+\vspace{2mm}
+
+\cventry{2012--2014}{Preparatory Class}{Lycée Kléber}{Strasbourg}{\textit{MPSI-MP}}{2 years of intensive preparation to top French engineering schools}
+
+
+\section{Experience}
+
+\cventry{December-Present}{Data engineer}{Leboncoin}{Paris}{}{\begin{itemize}%
+\item Created data-pipelines for email marketing campaign purposes
+\item Helped for maintaining databases
+\end{itemize}}
+
+\cventry{March-August 2018}{Data engineer}{Nimley}{Paris-Londres} {}{\begin{itemize}%
+\item Developped the mailing system and the associated data production
+\item Maintained data architectures, relational and document-oriented databases
+\end{itemize}}
+
+\cventry{September 2017-February}{Data scientist}{Hostnfly}{Paris} {}{\begin{itemize}%
+\item Analysed Airbnb Paris market, created the elasticity model
+\item Helped for reinforcements of the pricer algorithm 
+\item Analysed daily intern datas for marketing and business purposes
+\end{itemize}}
+
+
+\cventry{August 2015}{Volunteer}{Humanitarian mission}{Nagarkot (Nepal)}{}{\begin{itemize}%
+\item Taught English lessons in a primary school for 2 weeks
+\item Rehabilitated a bamboo house and assisted the local community in re-building a temple
+\end{itemize}}
+\cventry{June--July 2015}{Data analyst}{Labsense}{Paris}{}{
+\begin{itemize}%
+\item Developed a data mining algorithm for an e-commerce platform
+\end{itemize}}
+%\cventry{Eté 2012}{Pose de faux plafonds}{IDDE}{Strasbourg}{}{.}
+%\cventry{Eté 2010}{Récolte et conditionnement du tabac}{Agriculteurs locaux}{Suisse}{}{.}
+
+
+\section{Academic Projects}
+
+
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+    \item Variational Auto-Encoder (Keras) for Image and Music Generation
+    \item Compressed Sensing to reconstruct satellite images
+    \item Network Analysis : Jazzmen connection data 
+    \item Online / Reinforcement Learning : Multi-armed Bandit Models for optimal design of clinical trials
+    \item Poincare Embeddings on music networks
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\textwidth}
+\begin{itemize}
+     \item Applied Statistics Project (with Kynapse) : house prices prediction (quantile \& panel regressions, Boosting, SVM)
+    \item PageRank algorithm by MapReduce approach
+    \item Genetic data biclustering by non-parametric bayesian approach 
+    \item Ecological time series modeling by Monte Carlo methods (ABC, SMC, AdPMCMC)
+    \item Temporal study of French oil extraction (ARIMA models)
+\end{itemize}
+\end{minipage}
+%\begin{minipage}{0.45\textwidth}
+%\begin{itemize}
+%    \item Paris nightlife predicting from musical taste (scrapping, API, Machine Learning) 
+%    \item Estimation of infection rate from seroprevalence data (Stochastic EM algorithm)
+%\end{itemize}
+%\end{minipage}
+
+%\cvitem{2015}{Projet d'Economie : Comportement spéculatif des investisseurs}
+%\cvitem{2014-2015}{Projet de statistique (sous SAS/R) : "Politique et sentiment d'insécurité"}
+%\cvitem{2014}{Projet d'Economie : "La performance innovatrice de l'Europe"}
+%\cvitem{2013-2014}{Projet de Mathématiques (sous Maple) : "La théorie du choix social"}
+
+\section{Skills}
+\cvitem{Machine/Deep Learning}{Regression, Clustering, Random Forest, SVM, Boosting, Neural Nets}
+\cvitem{Mathematics - Other}{Convex and differentiable optimization, Non-parametric and bayesian statistics, Monte Carlo (Gibbs, Metropolis, Sequential), Semi \& non-parametric econometrics}
+%\cvitem{Economie}{Microéconomie, Macroéconomíe, Théorie des Jeux, Sondages}
+\cvitem{Programmation}{Python \textit{(Pandas, NumPy, sklearn, tensorflow)}, R (Advanced), 
+ Shell, SQL, Spark, JavaScript}
+\cvitem{Languages}{English (Fluent, TOIEC 900, CAE)}
+
+\section{Interests - Associative}
+
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+    \item Ex vice-president of ENSAE evenementiel
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{itemize}
+    \item Ex vice-president of Gala ENSAE ($\sim$ 20k\euro{} budget)
+    %\item Active member of ENSAE's bar (2014-2017)
+    \item Running, Handball, Slackline
+    \item Art, Records collector
+\end{itemize}
+\end{minipage}
+
+\end{document}
