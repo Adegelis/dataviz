@@ -14,7 +14,7 @@ Highcharts.chart('hcviol1', {
     yAxis: {
         min: 0,
         title: {
-            text: 'Part des violences physiques et sexuelles (\%)'
+            text: 'Part des violences physiques et sexuelles'
         }
     },
     tooltip: {
