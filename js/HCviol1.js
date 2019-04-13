@@ -5,6 +5,9 @@ Highcharts.chart('hcviol1', {
     title: {
         text: 'Violences phyisques et sexuelles subies par les femmes'
     },
+    subtitle: {
+        text: 'Au sein du ménage'
+    },
     xAxis: {
         categories: ['2006-2010', '2011-2017']
     },
@@ -25,9 +28,9 @@ Highcharts.chart('hcviol1', {
     },
     series: [{
          name: 'Violences physiques',
-        data: [239400,	204350], color: '#264874' 
+        data: [239400,	204350], color: '#08298A' 
     }, {
         name: 'Violences sexuelles',
-        data: [58100, 46900], color: '#74c476' 
+        data: [58100, 46900], color: '#FAE392' 
     }]
 });

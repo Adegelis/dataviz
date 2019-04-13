@@ -6,10 +6,11 @@ Highcharts.chart('partnershom', {
         plotShadow: false
     },
     title: {
-        text: 'Hommes',
+        text: 'Nombre de partenaires - Hommes',
         align: 'center',
         verticalAlign: 'middle',
-        y: 40
+        y: -150,
+        style: {fontFamily: 'Open Sans, sans-serif' }
     },
     tooltip: {
         pointFormat: '{series.name} : <b>{point.y:f}</b>'
@@ -24,7 +25,7 @@ Highcharts.chart('partnershom', {
                     color: 'white'
                 }               
             }, 
-            colors:['#74c476','#fb6a4a','#E7CE17','#264874'],
+            colors:['#08298A','#C6E8D2','#F781BE','#FAE392'],
             startAngle: -90,
             endAngle: 90,
             center: ['50%', '75%'],
